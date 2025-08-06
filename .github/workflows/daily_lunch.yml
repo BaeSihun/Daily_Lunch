@@ -22,7 +22,7 @@ jobs:
       - name: 점심 추천 업데이트
         run: |
           pip install requests
-          python update_lunch.py
+          python daily_lunch.py
         env:
           FOOD: ${{ secrets.FOOD }}
 
