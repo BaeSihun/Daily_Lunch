@@ -1,46 +1,50 @@
-import requests, os, random
+import requests
+import os
 from datetime import datetime, timedelta, timezone
 
 # ⏰ 한국 시간
 KST = timezone(timedelta(hours=9))
 now = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
 
-# 🔐 API 키
+# 🔑 Spoonacular API 키
 API_KEY = os.getenv("FOOD")
 if not API_KEY:
     raise ValueError("❌ 환경변수 'FOOD'가 설정되지 않았습니다.")
 
-# 🍽️ 한국 요리 레시피 API 호출
-url = f"https://api.spoonacular.com/recipes/random?number=20&cuisine=korean&apiKey={API_KEY}"
+# 🍱 점심 메뉴 5개 요청
+url = f"https://api.spoonacular.com/recipes/random?number=1&tags=lunch,korean&apiKey={API_KEY}"
 res = requests.get(url)
 
-recipes = []
+main_title = main_image = main_url = ""
+sub_menus = []
 
 if res.status_code == 200:
     data = res.json().get("recipes", [])
-    random.seed(datetime.now().timestamp())
-    final = random.sample(data, k=min(5, len(data)))
+    if len(data) >= 1:
+        main = data[0]
+        main_title = main.get('title', '제목 없음')
+        main_image = main.get('image', '')
+        main_url = main.get('sourceUrl', '')
 
-    for r in final:
-        title = r.get("title", "No Title")
-        image = r.get("image", "")
-        source = r.get("sourceUrl", "#")
-        recipes.append((title, image, source))
+    if len(data) > 1:
+        sub_menus = [item.get('title', '메뉴 없음') for item in data[1:]]
 else:
-    print("🚨 API 호출 실패:", res.status_code)
-    print(res.text)
+    main_title = "점심 메뉴를 불러오지 못했습니다."
+    print(f"🚨 API 호출 실패: {res.status_code}")
 
-# 📄 README.md 생성
+# 📄 README 작성
 with open("README.md", "w", encoding="utf-8") as f:
-    f.write(f"# 🍱 오늘의 한식 추천\n\n")
-    f.write(f"🕒 업데이트 시간: {now} (KST)\n\n")
+    f.write(f"# 🥗 오늘의 점심 추천\n\n")
+    f.write(f"**🕒 {now} (KST)**\n\n")
+    f.write(f"🍽️ 오늘의 메뉴: **[{main_title}]({main_url})**\n\n")
+    if main_image:
+        f.write(f"![menu image]({main_image})\n\n")
 
-    if recipes:
-        for i, (title, img, url) in enumerate(recipes, 1):
-            f.write(f"## {i}. [{title}]({url})\n\n")
-            if img:
-                f.write(f"![menu image]({img})\n\n")
-    else:
-        f.write("❌ 조건에 맞는 점심 메뉴가 없습니다.\n\n")
+    if sub_menus:
+        f.write("📌 다른 추천 메뉴:\n")
+        for item in sub_menus:
+            f.write(f"- {item}\n")
+        f.write("\n")
 
-    f.write("---\n자동 점심봇 by Spoonacular API 🍽️")
+    f.write("---\n")
+    f.write("자동 점심봇 by Spoonacular API 🍱")
