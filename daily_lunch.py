@@ -10,7 +10,7 @@ API_KEY = os.getenv("FOOD")
 if not API_KEY:
     raise ValueError("❌ 환경변수 'FOOD'가 설정되지 않았습니다.")
 
-# ✅ 한국인 선호 외식 키워드
+# ✅ 한국인 선호 메뉴 키워드
 preferred_keywords = [
     # 한식
     "kimchi", "bulgogi", "bibimbap", "tteokbokki", "galbi", "samgyeopsal",
@@ -36,8 +36,8 @@ preferred_keywords = [
 def is_preferred(title: str) -> bool:
     return any(keyword in title.lower() for keyword in preferred_keywords)
 
-# 📦 Spoonacular API 요청 (30개 받아서 필터링)
-url = f"https://api.spoonacular.com/recipes/random?number=30&tags=lunch&apiKey={API_KEY}"
+# 📦 Spoonacular API 요청
+url = f"https://api.spoonacular.com/recipes/random?number=50&tags=lunch&apiKey={API_KEY}"
 res = requests.get(url)
 
 recipes = []
@@ -50,15 +50,15 @@ if res.status_code == 200:
     for r in final:
         title = r.get("title", "No Title")
         image = r.get("image", "")
-        url = r.get("sourceUrl", "#")
-        recipes.append((title, image, url))
+        source = r.get("sourceUrl", "#")
+        recipes.append((title, image, source))
 else:
     print("🚨 API 호출 실패:", res.status_code)
     print(res.text)
 
 # 📄 README.md 생성
 with open("README.md", "w", encoding="utf-8") as f:
-    f.write(f"# 🍽️ 오늘의 점심 추천\n\n")
+    f.write(f"# 🍱 오늘의 점심 추천\n\n")
     f.write(f"🕒 업데이트 시간: {now} (KST)\n\n")
 
     if recipes:
@@ -69,4 +69,4 @@ with open("README.md", "w", encoding="utf-8") as f:
     else:
         f.write("❌ 조건에 맞는 점심 메뉴가 없습니다.\n\n")
 
-    f.write("---\n자동 점심봇 by Spoonacular API 🍱")
+    f.write("---\n자동 점심봇 by Spoonacular API 🍽️")
