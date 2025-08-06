@@ -11,14 +11,14 @@ if not API_KEY:
     raise ValueError("❌ 환경변수 'FOOD'가 설정되지 않았습니다.")
 
 # 🍽️ 한국 요리 레시피 API 호출
-url = f"https://api.spoonacular.com/recipes/random?number=10&cuisine=korean&apiKey={API_KEY}"
+url = f"https://api.spoonacular.com/recipes/random?number=5&tags=lunch,korean&apiKey={API_KEY}"
 res = requests.get(url)
 
 recipes = []
 
 if res.status_code == 200:
     data = res.json().get("recipes", [])
-    final = random.sample(data, k=min(5, len(data)))
+    final = random.sample(data, k=min(3, len(data)))
 
     for r in final:
         title = r.get("title", "No Title")
@@ -31,7 +31,7 @@ else:
 
 # 📄 README.md 생성
 with open("README.md", "w", encoding="utf-8") as f:
-    f.write(f"# 🍱 오늘의 점심 추천\n\n")
+    f.write(f"# 🍱 오늘의 한식 추천\n\n")
     f.write(f"🕒 업데이트 시간: {now} (KST)\n\n")
 
     if recipes:
