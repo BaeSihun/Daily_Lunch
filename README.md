@@ -1,26 +1,26 @@
-# 🍽️ 오늘의 점심 추천
+# 🍱 오늘의 점심 추천
 
-🕒 업데이트 시간: 2025-08-06 11:40:16 (KST)
+🕒 업데이트 시간: 2025-08-06 11:45:54 (KST)
 
-## 1. [The Secret to Easy Skillet Filet Mignon Steak Tacos](https://www.pinkwhen.com/filet-mignon-soft-tacos-recipe/)
+## 1. [Gujarati Dry Mung Bean Curry](https://www.foodista.com/recipe/G6ZJW56S/gujarati-dry-mung-bean-curry)
 
-![menu image](https://img.spoonacular.com/recipes/1063645-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/646043-556x370.jpg)
 
-## 2. [Neoguri (Spicy Seafood Ramen)](https://www.foodista.com/recipe/77PG3GGF/neoguri-spicy-seafood-ramen)
+## 2. [Easy and Delicious Taco Soup](https://www.foodista.com/recipe/YTTTGRJK/easy-and-delicious-taco-soup)
 
-![menu image](https://img.spoonacular.com/recipes/653008-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/641815-556x370.jpg)
 
-## 3. [Eggplant & Artichoke Heart Galettes](https://www.foodista.com/recipe/LD5GLFXJ/eggplant-artichoke-heart-galettes)
+## 3. [Flank Steak With Garlicky Mediterranean Salad](https://www.foodista.com/recipe/DRSBMGKW/flank-steak-with-garlicky-mediterranean-salad)
 
-![menu image](https://img.spoonacular.com/recipes/642272-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/643059-556x370.jpg)
 
-## 4. [Steamy Creamy Mushroom Risotto](http://spoonacular.com/-1384385156959)
+## 4. [Superbowl Chili](https://www.foodista.com/recipe/DMQTR5ZC/superbowl-chili)
 
-![menu image](https://img.spoonacular.com/recipes/157375-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/662376-556x370.jpg)
 
-## 5. [Chicken Parmesan Patty- Eat As A Burger OR On Pasta](http://www.pinkwhen.com/chicken-parmesan-patty/)
+## 5. [Cheese Tortellini With Shrimp In Tomato Cream Sauce](https://www.foodista.com/recipe/ZTD3WYNC/cheese-tortellini-with-shrimp-in-tomato-cream-sauce)
 
-![menu image](https://img.spoonacular.com/recipes/801377-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/637593-556x370.jpg)
 
 ---
-자동 점심봇 by Spoonacular API 🍱
+자동 점심봇 by Spoonacular API 🍽️
