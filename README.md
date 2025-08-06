@@ -1,10 +1,10 @@
 # 🥗 오늘의 점심 추천
 
-**🕒 2025-08-06 12:11:14 (KST)**
+**🕒 2025-08-06 12:45:32 (KST)**
 
-🍽️ 오늘의 메뉴: **[Donkatsu - Korean Breaded Pork Cutlet](https://www.foodista.com/recipe/BC6ZTT5G/donkatsu-korean-breaded-pork-cutlet)**
+🍽️ 오늘의 메뉴: **[Korean Beef Rice Bowl](https://www.foodista.com/recipe/7LRXNC6T/korean-beef-rice-bowl)**
 
-![menu image](https://img.spoonacular.com/recipes/641565-556x370.jpg)
+![menu image](https://img.spoonacular.com/recipes/649030-556x370.jpg)
 
 ---
 자동 점심봇 by Spoonacular API 🍱
