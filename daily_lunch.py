@@ -10,9 +10,8 @@ API_KEY = os.getenv("FOOD")
 if not API_KEY:
     raise ValueError("❌ 환경변수 'FOOD'가 설정되지 않았습니다.")
 
-# 📦 Spoonacular API 요청 (한국인들이 자주 먹는 메뉴 기반)
-tags = "lunch,korean,bibimbap,bulgogi,kimchi,pork,ramen,noodle,rice,stir-fry,soup,spicy"
-url = f"https://api.spoonacular.com/recipes/random?number=10&tags={tags}&cuisine=korean&apiKey={API_KEY}"
+# 🍽️ 한국 요리 레시피 API 호출
+url = f"https://api.spoonacular.com/recipes/random?number=10&cuisine=korean&apiKey={API_KEY}"
 res = requests.get(url)
 
 recipes = []
