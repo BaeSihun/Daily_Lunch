@@ -37,7 +37,7 @@ def is_preferred(title: str) -> bool:
     return any(keyword in title.lower() for keyword in preferred_keywords)
 
 # 📦 Spoonacular API 요청
-url = f"https://api.spoonacular.com/recipes/random?number=50&tags=lunch&apiKey={API_KEY}"
+url = f"https://api.spoonacular.com/recipes/random?number=10&tags=lunch&cuisine=korean&apiKey={API_KEY}"
 res = requests.get(url)
 
 recipes = []
